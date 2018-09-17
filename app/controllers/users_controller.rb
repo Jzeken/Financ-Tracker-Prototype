@@ -4,7 +4,20 @@ class UsersController < ApplicationController
     @user_stocks = current_user.stocks
   end
 
-  def my_friend
-    
+  def my_friends
+    @friendships = current_user.friends
   end
+
+  def search
+    if params[:search_param].blank?
+      flash.now[:danger] = "You have entered an empty search string"
+    else
+      @users = User.search(param[:search_param])
+      flash.now[:danger] = "No user match the search criteria" if @users.blank?
+    end
+    respond_to do |format|
+      format.js { render partial: 'friends/result' }
+    end
+  end
+
 end
