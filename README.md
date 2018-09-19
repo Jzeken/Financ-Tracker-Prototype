@@ -16,3 +16,5 @@ FEATURES
 The app still has no proper design or UI yet it only depends on twitter-bootstrap, but all are functioning well.
 
 [FOR THE SAKE OF LEARNING RUBY ON RAILS]
+
+link of application : https://project-finance-tracker.herokuapp.com/
